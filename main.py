@@ -1,4 +1,5 @@
 import seleccion as s
+import mutacion as m
 import general as g
 import cruza as c
 import os
@@ -18,8 +19,8 @@ g.tablaSeleccion(fen,val,fit,pro,acu)
 
 parejas=c.formarParejas(NOFENOTIPOS,fen,acu)
 hijos=c.inicioCruza(parejas)
+mutaciones=m.inicioMutacion(hijos)
 
-g.ciclo(parejas,hijos)
-
+g.ciclo(parejas,hijos,mutaciones)
 
 
