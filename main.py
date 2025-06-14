@@ -16,8 +16,10 @@ acu=s.acumulado(pro)
 os.system('clear')
 g.tablaSeleccion(fen,val,fit,pro,acu)
 
-g.tituloPadres()
-c.formarParejas(NOFENOTIPOS,fen,acu)
+parejas=c.formarParejas(NOFENOTIPOS,fen,acu)
+hijos=c.inicioCruza(parejas)
+
+g.ciclo(parejas,hijos)
 
 
 
