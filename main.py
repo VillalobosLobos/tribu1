@@ -1,5 +1,6 @@
 import seleccion as s
 import general as g
+import cruza as c
 import os
 
 #Variables
@@ -14,6 +15,9 @@ acu=s.acumulado(pro)
 
 os.system('clear')
 g.tablaSeleccion(fen,val,fit,pro,acu)
+
+g.tituloPadres()
+c.formarParejas(NOFENOTIPOS,fen,acu)
 
 
 
