@@ -1,5 +1,18 @@
 from random import *
 
+def ordenarMutaciones(parejas):
+	fenotipos=[]
+	for i in parejas:
+		fenotipos.append(i[0])
+		fenotipos.append(i[1])
+	return fenotipos
+
+def decodificar(fenotipos):
+	valDecodificados=[]
+	for i in fenotipos:
+		valDecodificados.append(int(i,2))
+	return valDecodificados
+
 def fenotipos(valores,n):
 	n=n+1
 	longitud=len(bin(n)[2:])

@@ -15,12 +15,26 @@ pro=s.probabilidad(fit,tap)
 acu=s.acumulado(pro)
 
 os.system('clear')
-g.tablaSeleccion(fen,val,fit,pro,acu)
 
 parejas=c.formarParejas(NOFENOTIPOS,fen,acu)
 hijos=c.inicioCruza(parejas)
 mutaciones=m.inicioMutacion(hijos)
 
+g.tablaSeleccion(fen,val,fit,pro,acu,"Generación 1")
 g.ciclo(parejas,hijos,mutaciones)
+valAlto=g.mejor(fit)
+
+print(f'El valor más grande es: {valAlto}')
+
+try:
+	print('\n¿Quieres ver otra generación? ',end='')
+	sigue=int(input())
+
+	if sigue==1:
+		g.generaciones(mutaciones,"Generación ","2",valAlto)
+	else:
+		print(f'\n\nAdios mi estimado :D')
+except ValueError:
+	print(f'\n\nAdios mi estimado :D')
 
 
